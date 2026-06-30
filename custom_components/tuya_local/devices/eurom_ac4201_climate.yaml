@@ -1,0 +1,98 @@
+name: Air conditioner
+products:
+  - id: bf8f3dee85558bba8epg10
+    manufacturer: Eurom
+    model: AC4201 Split caravan airco
+entities:
+  - entity: climate
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+      - id: 2
+        name: current_temperature
+        type: integer
+        unit: C
+        range:
+          min: 0
+          max: 50
+      - id: 5
+        name: temperature
+        type: integer
+        unit: C
+        range:
+          min: 16
+          max: 28
+      - id: 7
+        name: mode
+        type: string
+        mapping:
+          - dps_val: "Caravan"
+            value: "Carvan"
+          - dps_val: "Home"
+            value: "Home"
+          - dps_val: "Standby"
+            value: "Standby"
+      - id: 9
+        name: fan_mode
+        type: string
+        mapping:
+          - dps_val: "sleep"
+            value: low
+          - dps_val: "low"
+            value: medium
+          - dps_val: "high"
+            value: high
+      - id: 13
+        name: timer
+        type: string
+        mapping:
+          - dps_val: "1h"
+            value: "1h"
+          - dps_val: "2h"
+            value: "2h"
+          - dps_val: "3h"
+            value: "3h"
+          - dps_val: "4h"
+            value: "4h"
+          - dps_val: "5h"
+            value: "5h"
+          - dps_val: "6h"
+            value: "6h"
+          - dps_val: "7h"
+            value: "7h"
+          - dps_val: "8h"
+            value: "8h"
+          - dps_val: "9h"
+            value: "9h"
+          - dps_val: "cancel"
+            value: "cancel"
+      - id: 14
+        name: countdown_left
+        type: integer
+        unit: s
+        range:
+          min: 0
+          max: 99999
+      - id: 15
+        name: fault
+        type: string
+        mapping:
+          - dps_val: "CO"
+            value: "Check Water Output"
+          - dps_val: "E0"
+            value: "E0"
+          - dps_val: "E1"
+            value: "E1"
+          - dps_val: "E2"
+            value: "E2"
+          - dps_val: "E3"
+            value: "E3"
+      - id: 101
+        name: hvac_action
+        type: boolean
+        mapping:
+          - dps_val: false
+            value: cooling
+          - dps_val: true
+            value: fan
